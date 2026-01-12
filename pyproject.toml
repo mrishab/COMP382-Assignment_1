@@ -1,0 +1,7 @@
+[project]
+name = "COMP390-Assignment_1"
+version = "0.1.0"
+description = "Python based app to test a string against a regex pattern"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
