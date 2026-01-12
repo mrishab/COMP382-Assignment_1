@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Python based app to test a string against a regex pattern"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pyside6>=6.10.1",
+]
 
 [project.scripts]
 main = "comp390_assignment_1.main:main"
