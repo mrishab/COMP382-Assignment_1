@@ -4,7 +4,7 @@ A Python based app to test a string against a regex pattern
 
 ## Dependencies
 
-- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) (version 0.9.24)
 Easiest way to install is:
     - Mac: `brew install uv`
     - Windows: `winget install --id=astral-sh.uv  -e`
@@ -15,4 +15,16 @@ Easiest way to install is:
 
 ```bash
 uv sync
+```
+
+## Usage
+
+```bash
+uv run main
+```
+
+## Testing
+
+```bash
+uv run pytest
 ```
