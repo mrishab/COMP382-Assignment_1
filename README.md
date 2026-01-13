@@ -1,4 +1,4 @@
-# COMP390 Assignment-1
+# COMP382 Assignment-1
 
 A Python based app to test a string against a regex pattern
 

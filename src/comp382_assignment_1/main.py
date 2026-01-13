@@ -1,5 +1,5 @@
 def main():
-    print("Hello from comp390-assignment-1!")
+    print("Hello from comp382-assignment-1!")
 
 
 if __name__ == "__main__":

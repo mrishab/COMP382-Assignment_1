@@ -1,5 +1,5 @@
 [project]
-name = "COMP390-Assignment_1"
+name = "COMP382-Assignment_1"
 version = "0.1.0"
 description = "Python based app to test a string against a regex pattern"
 readme = "README.md"
@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [project.scripts]
-main = "comp390_assignment_1.main:main"
+main = "comp382_assignment_1.main:main"
 
 [build-system]
 requires = ["uv_build>=0.7.0,<0.8.0"]

@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "comp390-assignment-1"
+name = "comp382-assignment-1"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
