@@ -26,5 +26,5 @@ uv run main
 ## Testing
 
 ```bash
-uv run pytest
+uv run test
 ```
