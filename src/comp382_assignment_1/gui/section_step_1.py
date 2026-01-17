@@ -1,7 +1,9 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QHBoxLayout
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QHBoxLayout
 from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
-from comp382_assignment_1.gui.components import ValidatedLineEdit, VirtualKeyboard
+from comp382_assignment_1.gui.validated_line_edit import ValidatedLineEdit
+from comp382_assignment_1.gui.virtual_keyboard import VirtualKeyboard
+from comp382_assignment_1.gui.utils import load_stylesheet
 
 class SectionStep1(QWidget):
     def __init__(self, app_config: AppConfig, parent=None):
@@ -9,7 +11,6 @@ class SectionStep1(QWidget):
         self.app_config = app_config
         self.setup_ui()
     def setup_ui(self):
-        from comp382_assignment_1.gui.utils import load_stylesheet
         self.setStyleSheet(load_stylesheet('section_step_1.css'))
 
         layout = QVBoxLayout()
