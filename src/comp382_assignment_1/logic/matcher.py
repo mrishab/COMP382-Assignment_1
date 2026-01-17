@@ -1,31 +1,38 @@
+from comp382_assignment_1.common.symbols import Symbols
+
 def match(regex, string):
     
-    regex = regex.replace(' ', '')
+    regex = regex.replace(Symbols.SPACE, Symbols.EMPTY_STRING)
     
     # BASE CASES
-    if regex == 'ε':
-        return string == ''
-    if regex == '∅':
+    if regex == Symbols.EPSILON:
+        return string == Symbols.EMPTY_STRING
+    if regex == Symbols.EMPTY_SET:
         return False
-    if regex == 'a':
-        return string == 'a'
-    if regex == 'b':
-        return string == 'b'
+    if regex == Symbols.A:
+        return string == Symbols.A
+    if regex == Symbols.B:
+        return string == Symbols.B
     
     # Check for parentheses
-    if regex.startswith('(') and regex.endswith(')'):
-        return match(regex[1:-1], string)
+    if regex.startswith(Symbols.LEFT_PARENTHESIS) and regex.endswith(Symbols.RIGHT_PARENTHESIS):
+        # Check if it's (R)*
+        if regex.endswith(Symbols.RIGHT_PARENTHESIS + Symbols.STAR):
+            inner = regex[1:-2]
+            return match(inner + Symbols.STAR, string)
+        else:
+            return match(regex[1:-1], string)
     
    # UNION OPERATOR ∪
     depth = 0
     # Find the rightmost union at top level
     last_union_pos = -1
     for i, char in enumerate(regex):
-        if char == '(':
+        if char == Symbols.LEFT_PARENTHESIS:
             depth += 1
-        elif char == ')':
+        elif char == Symbols.RIGHT_PARENTHESIS:
             depth -= 1
-        elif char == '∪' and depth == 0:
+        elif char == Symbols.UNION and depth == 0:
             last_union_pos = i
     
     if last_union_pos != -1:
@@ -37,11 +44,11 @@ def match(regex, string):
     depth = 0
     last_concat_pos = -1
     for i, char in enumerate(regex):
-        if char == '(':
+        if char == Symbols.LEFT_PARENTHESIS:
             depth += 1
-        elif char == ')':
+        elif char == Symbols.RIGHT_PARENTHESIS:
             depth -= 1
-        elif char == '◦' and depth == 0:
+        elif char == Symbols.CONCATENATION and depth == 0:
             last_concat_pos = i
     
     if last_concat_pos != -1:
@@ -54,10 +61,10 @@ def match(regex, string):
         return False
     
     # STAR OPERATOR *
-    if regex.endswith('*'):
+    if regex.endswith(Symbols.STAR):
         inner = regex[:-1]
         
-        if string == '':
+        if string == Symbols.EMPTY_STRING:
             return True
         
         for i in range(1, len(string) + 1):
