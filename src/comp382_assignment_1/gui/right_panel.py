@@ -2,7 +2,6 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QFrame
 from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
 from comp382_assignment_1.gui.header import Header
-from comp382_assignment_1.gui.footer import Footer
 from comp382_assignment_1.gui.section_step_1 import SectionStep1
 from comp382_assignment_1.gui.section_step_2 import SectionStep2
 from comp382_assignment_1.gui.utils import load_stylesheet
@@ -43,9 +42,5 @@ class RightPanel(QWidget):
 
         # Spacer
         layout.addStretch()
-
-        # Footer
-        self.footer = Footer(self.app_config)
-        layout.addWidget(self.footer)
         
         self.step1.input_field.textChanged.connect(self.step2.update_match)

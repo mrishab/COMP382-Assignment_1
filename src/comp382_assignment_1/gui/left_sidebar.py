@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame
 from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
 from comp382_assignment_1.gui.sidebar_info_point import SidebarInfoPoint
+from comp382_assignment_1.gui.footer import Footer
 from comp382_assignment_1.gui.utils import load_stylesheet
 
 class LeftSidebar(QFrame):
@@ -37,3 +38,7 @@ class LeftSidebar(QFrame):
         
         # Add stretch at the bottom to push content up
         layout.addStretch()
+
+        # Footer
+        self.footer = Footer(self.app_config)
+        layout.addWidget(self.footer)
