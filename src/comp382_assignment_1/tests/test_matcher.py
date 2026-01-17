@@ -12,11 +12,11 @@ def test_literals():
     # Test 'a' literal
     assert match('a', 'a') == True
     assert match('a', 'b') == False
-    
+
     # Test ε (empty string)
     assert match('ε', '') == True
     assert match('ε', 'a') == False
-    
+
     # Test ∅ (empty set)
     assert match('∅', '') == False
     assert match('∅', 'a') == False
@@ -27,7 +27,7 @@ def test_union():
     assert match('a∪b', 'a') == True
     assert match('a∪b', 'b') == True
     assert match('a∪b', 'ab') == False
-    
+
     # Union with ε
     assert match('a∪ε', 'a') == True
     assert match('a∪ε', '') == True
@@ -37,7 +37,7 @@ def test_concatenation():
     # Simple concatenation
     assert match('a◦b', 'ab') == True
     assert match('a◦b', 'a') == False
-    
+
     # Concatenation with ε
     assert match('a◦ε', 'a') == True
     assert match('ε◦a', 'a') == True
@@ -49,7 +49,7 @@ def test_star():
     assert match('a*', 'a') == True
     assert match('a*', 'aa') == True
     assert match('a*', 'b') == False
-    
+
     # (ab)*
     assert match('(a◦b)*', '') == True
     assert match('(a◦b)*', 'ab') == True
@@ -60,7 +60,7 @@ def test_parentheses():
     # Simple parentheses
     assert match('(a)', 'a') == True
     assert match('(a◦b)', 'ab') == True
-    
+
     # Parentheses with union
     assert match('(a∪b)◦a', 'aa') == True
     assert match('(a∪b)◦a', 'ba') == True
@@ -71,11 +71,11 @@ def test_combined_operators():
     # Union of concatenations
     assert match('a◦b∪b◦a', 'ab') == True
     assert match('a◦b∪b◦a', 'ba') == True
-    
+
     # Concatenation with star
     assert match('a◦b*', 'a') == True
     assert match('a◦b*', 'ab') == True
-    
+
     # Star with union inside
     assert match('(a∪b)*◦a', 'a') == True
     assert match('(a∪b)*◦a', 'aba') == True
@@ -84,7 +84,7 @@ def run_all_tests():
     print("\n" + "="*70)
     print("RUNNING REGEX MATCHER TESTS")
     print("="*70)
-    
+
     test_functions = [
         ("Basic Literals", test_literals),
         ("Union Operator", test_union),
@@ -93,10 +93,10 @@ def run_all_tests():
         ("Parentheses", test_parentheses),
         ("Combined Operators", test_combined_operators),
     ]
-    
+
     passed = 0
     failed = []
-    
+
     for test_name, test_func in test_functions:
         try:
             test_func()
@@ -108,14 +108,14 @@ def run_all_tests():
         except Exception as e:
             failed.append((test_name, f"Error: {e}"))
             print(f"✗ {test_name} error: {e}")
-    
+
     print("\n" + "="*70)
     print("TEST SUMMARY")
     print("="*70)
     print(f"Total test categories: {len(test_functions)}")
     print(f"Passed: {passed}")
     print(f"Failed: {len(failed)}")
-    
+
     if failed:
         print("\nFAILED TESTS:")
         for test_name, error in failed:

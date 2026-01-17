@@ -8,22 +8,22 @@ class VirtualKeyboard(QWidget):
         self.keys = keys
         self.target_input = target_input
         self.setup_ui()
-        
+
     def setup_ui(self):
         layout = QHBoxLayout()
         layout.setContentsMargins(0, 10, 0, 0)
         layout.setSpacing(5)
         self.setLayout(layout)
-        
+
         self.setStyleSheet(load_stylesheet('components.css'))
-        
+
         # Add character keys
         for key in self.keys:
             btn = KeyboardButton(key, self.target_input)
             layout.addWidget(btn)
-            
+
         # Add Backspace key
         backspace_btn = BackspaceButton(self.target_input)
         layout.addWidget(backspace_btn)
-            
+
         layout.addStretch() # Push left alignment

@@ -15,6 +15,6 @@ class Symbols(str, Enum):
     SUBSCRIPT_ONE = '₁'
     SUBSCRIPT_TWO = '₂'
     SIGMA = 'Σ'
-    
+
     def __str__(self):
         return self.value

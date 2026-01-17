@@ -15,7 +15,7 @@ class RightPanel(QWidget):
 
     def setup_ui(self):
         self.setStyleSheet(load_stylesheet('main_window.css'))
-        
+
         layout = QVBoxLayout(self)
         layout.setContentsMargins(40, 40, 40, 40)
         layout.setSpacing(20)
@@ -42,5 +42,5 @@ class RightPanel(QWidget):
 
         # Spacer
         layout.addStretch()
-        
+
         self.step1.input_field.textChanged.connect(self.step2.update_match)

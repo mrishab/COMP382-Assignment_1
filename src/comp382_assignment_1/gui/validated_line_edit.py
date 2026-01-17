@@ -6,16 +6,16 @@ class ValidatedLineEdit(QLineEdit):
     def __init__(self, allowed_chars=None, parent=None):
         super().__init__(parent)
         self.allowed_chars = allowed_chars if allowed_chars is not None else set()
-        
+
     def keyPressEvent(self, event: QKeyEvent):
         text = event.text()
         key = event.key()
-        
+
         # Always allow control keys (Backspace, Delete, Left, Right, etc.)
         is_control = (key < CONTROL_KEY_MIN) or (key > CONTROL_KEY_MAX) or \
                      (event.modifiers() & CONTROL_MODIFIER) or \
                      (event.modifiers() & META_MODIFIER)
-        
+
         if is_control or not text:
              super().keyPressEvent(event)
              return

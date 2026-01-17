@@ -13,8 +13,8 @@ class LeftSidebar(QFrame):
 
     def setup_ui(self):
         self.setStyleSheet(load_stylesheet('left_sidebar.css'))
-        
-        # Determine fixed width if needed, or let layout handle it. 
+
+        # Determine fixed width if needed, or let layout handle it.
         # Typically sidebars have a fixed or max width.
         self.setFixedWidth(250)
 
@@ -27,7 +27,7 @@ class LeftSidebar(QFrame):
         title_label = QLabel(self.app_config.left_sidebar_title)
         title_label.setObjectName("Title")
         layout.addWidget(title_label)
-        
+
         # Separator or spacing
         layout.addSpacing(10)
 
@@ -35,7 +35,7 @@ class LeftSidebar(QFrame):
         for text in self.app_config.left_sidebar_info_points:
             point = SidebarInfoPoint(text)
             layout.addWidget(point)
-        
+
         # Add stretch at the bottom to push content up
         layout.addStretch()
 

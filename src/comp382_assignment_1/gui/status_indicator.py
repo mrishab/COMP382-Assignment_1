@@ -15,7 +15,7 @@ class StatusIndicator(QPushButton):
         else:
             self.setText(f"✗ {failure_text}")
             self.setProperty("valid", False)
-        
+
         # Refresh style to apply variations if defined in CSS
         self.style().unpolish(self)
         self.style().polish(self)

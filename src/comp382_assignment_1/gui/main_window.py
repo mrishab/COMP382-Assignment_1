@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
         # Main Layout (Horizontal split)
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-        
+
         main_layout = QHBoxLayout()
         main_layout.setContentsMargins(0, 0, 0, 0)
         main_layout.setSpacing(0)

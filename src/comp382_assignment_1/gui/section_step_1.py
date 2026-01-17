@@ -40,7 +40,7 @@ class SectionStep1(QWidget):
         self.validate_btn = StatusIndicator()
         self.validate_btn.set_status(True, self.app_config.section_1_button_text, "Invalid Syntax")
         input_row_layout.addWidget(self.validate_btn)
-        
+
         layout.addLayout(input_row_layout)
 
         # Virtual Keyboard

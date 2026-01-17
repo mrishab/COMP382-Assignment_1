@@ -13,7 +13,7 @@ class SectionStep2(QWidget):
         self.app_config = app_config
         self.current_regex = ""
         self.setup_ui()
-        
+
     def setup_ui(self):
         self.setStyleSheet(load_stylesheet('section_step_2.css'))
 
@@ -34,7 +34,7 @@ class SectionStep2(QWidget):
         # Input Row (Input + Result Label)
         input_row = QHBoxLayout()
         input_row.setSpacing(10)
-        
+
         # Input
         self.input_field = ValidatedLineEdit(allowed_chars=self.app_config.valid_test_string_chars)
         self.input_field.setPlaceholderText(self.app_config.section_2_placeholder)
@@ -43,22 +43,22 @@ class SectionStep2(QWidget):
         # Result Status Indicator
         self.result_status = StatusIndicator()
         input_row.addWidget(self.result_status)
-        
+
         layout.addLayout(input_row)
 
         # Virtual Keyboard
         self.keyboard = VirtualKeyboard(self.app_config.test_string_keyboard_keys, self.input_field)
         layout.addWidget(self.keyboard)
-        
+
         # Connect signals
         self.input_field.textChanged.connect(lambda: self.update_match(self.current_regex))
-        
+
         # Initialize state from logic
         self.update_match("")
 
     def update_match(self, regex):
         self.current_regex = regex
         test_string = self.input_field.text()
-            
+
         result = match(self.current_regex, test_string)
         self.result_status.set_status(result, "Accepted", "Rejected")
