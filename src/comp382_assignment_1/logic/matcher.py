@@ -14,12 +14,7 @@ def match(regex, string):
     
     # Check for parentheses
     if regex.startswith('(') and regex.endswith(')'):
-        # Check if it's (R)*
-        if regex.endswith(')*'):
-            inner = regex[1:-2]
-            return match(inner + '*', string)
-        else:
-            return match(regex[1:-1], string)
+        return match(regex[1:-1], string)
     
    # UNION OPERATOR ∪
     depth = 0
