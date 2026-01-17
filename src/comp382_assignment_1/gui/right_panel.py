@@ -47,3 +47,5 @@ class RightPanel(QWidget):
         # Footer
         self.footer = Footer(self.app_config)
         layout.addWidget(self.footer)
+        
+        self.step1.input_field.textChanged.connect(self.step2.update_match)

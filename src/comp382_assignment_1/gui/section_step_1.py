@@ -3,6 +3,7 @@ from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
 from comp382_assignment_1.gui.validated_line_edit import ValidatedLineEdit
 from comp382_assignment_1.gui.virtual_keyboard import VirtualKeyboard
+from comp382_assignment_1.gui.status_indicator import StatusIndicator
 from comp382_assignment_1.gui.utils import load_stylesheet
 
 class SectionStep1(QWidget):
@@ -36,14 +37,8 @@ class SectionStep1(QWidget):
         self.input_field.setPlaceholderText(self.app_config.section_1_placeholder)
         input_row_layout.addWidget(self.input_field)
 
-        self.validate_btn = QPushButton(self.app_config.section_1_button_text)
-        # Add checkmark icon conceptually (text for now or unicode) 
-        # Unicode checkmark: ✓
-        self.validate_btn.setText(f"✓ {self.app_config.section_1_button_text}")
-        self.validate_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        # Fixed width for button maybe? Or let it expand slightly.
-        self.validate_btn.setFixedWidth(140) 
-
+        self.validate_btn = StatusIndicator()
+        self.validate_btn.set_status(True, self.app_config.section_1_button_text, "Invalid Syntax")
         input_row_layout.addWidget(self.validate_btn)
         
         layout.addLayout(input_row_layout)
