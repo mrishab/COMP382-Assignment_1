@@ -1,0 +1,36 @@
+QLabel#Heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+QLabel#SubLabel {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+QLineEdit {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+}
+
+QPushButton {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #4cae4c;
+}
