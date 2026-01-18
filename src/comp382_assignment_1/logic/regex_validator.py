@@ -1,6 +1,6 @@
 def validate_regex(regex):
     if not regex:
-        return True # Or False depending on preference, but usually empty is okay
+        return True # Or False depending on preference, but usually empty is okay, not sure yet honestly, will check with Yahya
     
     # Simple parentheses balance check
     stack = []
