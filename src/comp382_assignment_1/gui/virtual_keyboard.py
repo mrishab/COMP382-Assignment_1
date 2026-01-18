@@ -15,8 +15,6 @@ class VirtualKeyboard(QWidget):
         layout.setSpacing(5)
         self.setLayout(layout)
 
-        self.setStyleSheet(load_stylesheet('components.css'))
-
         # Add character keys
         for key in self.keys:
             btn = KeyboardButton(key, self.target_input)

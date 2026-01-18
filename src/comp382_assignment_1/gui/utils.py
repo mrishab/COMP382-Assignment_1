@@ -9,4 +9,5 @@ def load_stylesheet(filename):
             return f.read()
     except Exception as e:
         print(f"Error loading stylesheet {filename}: {e}")
+        # Returning empty stylesheet to avoid crashing the application
         return ""

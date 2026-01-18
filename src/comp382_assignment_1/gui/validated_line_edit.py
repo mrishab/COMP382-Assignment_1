@@ -1,6 +1,11 @@
 from PySide6.QtWidgets import QLineEdit
 from PySide6.QtGui import QKeyEvent
-from comp382_assignment_1.gui.constants import CONTROL_KEY_MIN, CONTROL_KEY_MAX, CONTROL_MODIFIER, META_MODIFIER
+from PySide6.QtCore import Qt
+
+CONTROL_KEY_MIN = 0
+CONTROL_KEY_MAX = 0x01000000
+CONTROL_MODIFIER = Qt.KeyboardModifier.ControlModifier
+META_MODIFIER = Qt.KeyboardModifier.MetaModifier
 
 class ValidatedLineEdit(QLineEdit):
     def __init__(self, allowed_chars=None, parent=None):

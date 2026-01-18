@@ -1,8 +1,8 @@
+from comp382_assignment_1.gui.heading_label import HeadingLabel
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QFrame
 from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
-from comp382_assignment_1.gui.sidebar_info_point import SidebarInfoPoint
-from comp382_assignment_1.gui.footer import Footer
+from comp382_assignment_1.gui.text import Text
 from comp382_assignment_1.gui.utils import load_stylesheet
 
 class LeftSidebar(QFrame):
@@ -13,9 +13,6 @@ class LeftSidebar(QFrame):
 
     def setup_ui(self):
         self.setStyleSheet(load_stylesheet('left_sidebar.css'))
-
-        # Determine fixed width if needed, or let layout handle it.
-        # Typically sidebars have a fixed or max width.
         self.setFixedWidth(250)
 
         layout = QVBoxLayout()
@@ -24,8 +21,7 @@ class LeftSidebar(QFrame):
         self.setLayout(layout)
 
         # Title
-        title_label = QLabel(self.app_config.left_sidebar_title)
-        title_label.setObjectName("Title")
+        title_label = HeadingLabel(self.app_config.left_sidebar_title)
         layout.addWidget(title_label)
 
         # Separator or spacing
@@ -33,12 +29,8 @@ class LeftSidebar(QFrame):
 
         # Reference Points
         for text in self.app_config.left_sidebar_info_points:
-            point = SidebarInfoPoint(text)
-            layout.addWidget(point)
+            text_label = Text(text)
+            layout.addWidget(text_label)
 
         # Add stretch at the bottom to push content up
         layout.addStretch()
-
-        # Footer
-        self.footer = Footer(self.app_config)
-        layout.addWidget(self.footer)

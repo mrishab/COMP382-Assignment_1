@@ -18,3 +18,7 @@ class Symbols(str, Enum):
 
     def __str__(self):
         return self.value
+
+REGEX_SYMBOLS = [Symbols.UNION, Symbols.CONCATENATION, Symbols.STAR, Symbols.EPSILON, Symbols.EMPTY_SET, Symbols.LEFT_PARENTHESIS, Symbols.RIGHT_PARENTHESIS, Symbols.A, Symbols.B]
+
+STRING_SYMBOLS = [Symbols.A, Symbols.B]
