@@ -17,9 +17,11 @@
     "section_1_input_placeholder": "e.g., ((a ∪ b* ◦ a)",
     "section_1_status_text_valid": "Syntax Valid",
     "section_1_status_text_invalid": "Syntax Invalid",
+    "section_1_status_text_empty": "-",
     "section_2_heading": "2. Test Strings",
     "section_2_subheading": "Type a string to check (use \"e\" for empty):",
     "section_2_input_placeholder": "aba",
     "section_2_status_text_valid": "ACCEPTED",
-    "section_2_status_text_invalid": "REJECTED"
+    "section_2_status_text_invalid": "REJECTED",
+    "section_2_status_text_empty": "-"
 }

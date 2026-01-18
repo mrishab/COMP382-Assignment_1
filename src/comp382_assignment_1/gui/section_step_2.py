@@ -4,11 +4,10 @@ from comp382_assignment_1.gui.text import Text
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout
 from PySide6.QtCore import Qt
 from comp382_assignment_1.gui.app_config import AppConfig
-from comp382_assignment_1.gui.validated_line_edit import ValidatedLineEdit
 from comp382_assignment_1.gui.virtual_keyboard import VirtualKeyboard
 from comp382_assignment_1.gui.input_bar import InputBar
-from comp382_assignment_1.gui.utils import load_stylesheet
 from comp382_assignment_1.logic.matcher import match
+from comp382_assignment_1.logic.regex_validator import validate_regex
 
 class SectionStep2(QWidget):
     def __init__(self, app_config: AppConfig, parent=None):
@@ -35,7 +34,8 @@ class SectionStep2(QWidget):
             allowed_chars=STRING_SYMBOLS,
             valid_text=self.app_config.section_2_status_text_valid,
             invalid_text=self.app_config.section_2_status_text_invalid,
-            validator_func=lambda text: match(self.current_regex, text)
+            empty_text=self.app_config.section_2_status_text_empty,
+            validator_func=lambda text: None if not validate_regex(self.current_regex) else match(self.current_regex, text)
         )
         layout.addWidget(self.string_input_bar)
 

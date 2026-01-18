@@ -4,12 +4,13 @@ from comp382_assignment_1.gui.status_indicator import StatusIndicator
 from comp382_assignment_1.gui.validated_line_edit import ValidatedLineEdit
 
 class InputBar(QWidget):
-    def __init__(self, placeholder_text="", allowed_chars=None, valid_text="", invalid_text="", validator_func=None, parent=None):
+    def __init__(self, placeholder_text="", allowed_chars=None, valid_text="", invalid_text="", empty_text="", validator_func=None, parent=None):
         super().__init__(parent)
         self.placeholder_text = placeholder_text
         self.allowed_chars = allowed_chars
         self.valid_text = valid_text
         self.invalid_text = invalid_text
+        self.empty_text = empty_text
         self.validator_func = validator_func if validator_func is not None else lambda text: True
         self.setup_ui()
 
@@ -38,7 +39,7 @@ class InputBar(QWidget):
 
     def _on_text_changed(self, text):
         is_valid = self.validator_func(text)
-        self.status_indicator.set_status(is_valid, self.valid_text, self.invalid_text)
+        self.status_indicator.set_status(is_valid, self.empty_text, self.valid_text, self.invalid_text)
 
     # Exposting inner input field properties for access from this class
     @property

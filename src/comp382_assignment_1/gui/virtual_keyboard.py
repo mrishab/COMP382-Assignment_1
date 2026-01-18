@@ -1,5 +1,4 @@
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLineEdit
-from comp382_assignment_1.gui.utils import load_stylesheet
 from comp382_assignment_1.gui.keyboard_button import KeyboardButton, BackspaceButton
 
 class VirtualKeyboard(QWidget):

@@ -15,8 +15,11 @@ class StatusIndicator(QPushButton):
         self.setCursor(Qt.CursorShape.ArrowCursor)
         
 
-    def set_status(self, is_valid: bool, success_text: str, failure_text: str):
-        if is_valid:
+    def set_status(self, is_valid: bool, empty_text: str, success_text: str, failure_text: str):
+        if is_valid is None:
+            self.setText(empty_text)
+            self.setProperty("valid", None)
+        elif is_valid:
             self.setText(success_text)
             self.setProperty("valid", True)
         else:

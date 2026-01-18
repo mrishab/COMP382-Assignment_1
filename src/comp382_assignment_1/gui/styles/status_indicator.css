@@ -5,6 +5,7 @@ QPushButton#StatusIndicator {
     font-size: 13px;
     font-weight: bold;
     color: white;
+    background-color: #6c757d;
 }
 
 QPushButton#StatusIndicator[valid="true"] {
