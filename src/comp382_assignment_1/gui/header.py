@@ -9,7 +9,7 @@ class Header(QWidget):
         self.setup_ui()
 
     def setup_ui(self):
-        self.setStyleSheet(load_stylesheet('header.css'))   
+        self.setStyleSheet(load_stylesheet('header.css'))
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(10)
@@ -17,9 +17,10 @@ class Header(QWidget):
         # Header Title
         self.header_title = QLabel(self.app_config.header_title)
         self.header_title.setObjectName("HeaderTitle")
-        layout.addWidget(self.header_title)
 
         # Subtitle Text
         self.subtitle_label = QLabel(self.app_config.header_subtitle)
         self.subtitle_label.setObjectName("SubtitleLabel")
+
+        layout.addWidget(self.header_title)
         layout.addWidget(self.subtitle_label)

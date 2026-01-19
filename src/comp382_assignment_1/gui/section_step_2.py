@@ -23,11 +23,9 @@ class SectionStep2(QWidget):
 
         # Heading
         self.heading = HeadingLabel(self.app_config.section_2_heading)
-        layout.addWidget(self.heading)
 
         # Subtext
         self.sub_label = Text(self.app_config.section_2_subheading)
-        layout.addWidget(self.sub_label)
 
         self.string_input_bar = InputBar(
             placeholder_text=self.app_config.section_2_input_placeholder,
@@ -37,17 +35,20 @@ class SectionStep2(QWidget):
             empty_text=self.app_config.section_2_status_text_empty,
             validator_func=lambda text: None if not validate_regex(self.current_regex) else match(self.current_regex, text)
         )
-        layout.addWidget(self.string_input_bar)
 
         # Virtual Keyboard
         self.keyboard = VirtualKeyboard(STRING_SYMBOLS, self.string_input_bar.input_field)
-        layout.addWidget(self.keyboard)
 
         # Connect signals
         self.string_input_bar.textChanged.connect(lambda: self.update_match(self.current_regex))
 
         # Initialize state
         self.update_match("")
+
+        layout.addWidget(self.heading)
+        layout.addWidget(self.sub_label)
+        layout.addWidget(self.string_input_bar)
+        layout.addWidget(self.keyboard)
 
     def update_match(self, regex):
         self.current_regex = regex

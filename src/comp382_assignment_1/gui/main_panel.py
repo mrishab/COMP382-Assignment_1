@@ -24,22 +24,23 @@ class MainPanel(QWidget):
 
         # Header
         self.header = Header(self.app_config)
-        layout.addWidget(self.header)
 
         # Step 1 Section
         self.step1 = SectionStep1(self.app_config)
-        layout.addWidget(self.step1)
 
         # Horizontal Line Separator
         separator = Separator()
-        layout.addWidget(separator)
 
         # Step 2 Section
         self.step2 = SectionStep2(self.app_config)
-        layout.addWidget(self.step2)
 
         # Connecting the input bars of the two steps so they sync in realtime
         self.step1.regex_input_bar.textChanged.connect(self.step2.update_match)
+
+        layout.addWidget(self.header)
+        layout.addWidget(self.step1)
+        layout.addWidget(separator)
+        layout.addWidget(self.step2)
 
         # Spacer
         layout.addStretch()

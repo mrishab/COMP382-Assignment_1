@@ -25,17 +25,18 @@ class InputBar(QWidget):
         # Input Field
         self.input_field = ValidatedLineEdit(allowed_chars=self.allowed_chars)
         self.input_field.setPlaceholderText(self.placeholder_text)
-        layout.addWidget(self.input_field)
 
         # Validate Button
         self.status_indicator = StatusIndicator()
-        layout.addWidget(self.status_indicator)
 
         # Connect internal signals
         self.input_field.textChanged.connect(self._on_text_changed)
 
         # Initial status
         self._on_text_changed(self.input_field.text())
+
+        layout.addWidget(self.input_field)
+        layout.addWidget(self.status_indicator)
 
     def _on_text_changed(self, text):
         is_valid = self.validator_func(text)
