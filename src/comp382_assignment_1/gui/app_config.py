@@ -10,7 +10,7 @@ class AppConfig:
         # JSON Overrides and configs
         self.window_width = 1000
         self.window_height = 600
-    
+
     def set_attributes_from_json(self, json_path):
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)

@@ -6,14 +6,14 @@ class StatusIndicator(QPushButton):
     def __init__(self, text="", parent=None):
         super().__init__(text, parent)
         self.setup_ui()
-    
+
     def setup_ui(self):
         self.setObjectName("StatusIndicator")
         self.setStyleSheet(load_stylesheet('status_indicator.css'))
         self.setFixedWidth(140)
         self.setCheckable(False)
         self.setCursor(Qt.CursorShape.ArrowCursor)
-        
+
 
     def set_status(self, is_valid: bool, empty_text: str, success_text: str, failure_text: str):
         if is_valid is None:

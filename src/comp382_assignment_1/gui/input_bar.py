@@ -33,7 +33,7 @@ class InputBar(QWidget):
 
         # Connect internal signals
         self.input_field.textChanged.connect(self._on_text_changed)
-        
+
         # Initial status
         self._on_text_changed(self.input_field.text())
 
