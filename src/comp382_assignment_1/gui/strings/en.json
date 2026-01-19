@@ -23,5 +23,17 @@
     "section_2_input_placeholder": "aba",
     "section_2_status_text_valid": "ACCEPTED",
     "section_2_status_text_invalid": "REJECTED",
-    "section_2_status_text_empty": "-"
+    "section_2_status_text_empty": "-",
+    "practice_examples_label": "Practice Examples:",
+    "practice_examples_placeholder": "Select an example...",
+    "practice_examples_samples_descriptions": {
+        "desc_star_a": "Matches zero or more 'a's (e.g., '', 'a', 'aaaa')",
+        "desc_concat_ab": "Concatenation: 'a' followed by 'b'",
+        "desc_union_ab": "Union: Matches 'a' OR 'b'",
+        "desc_star_ab_group": "Zero or more repetitions of 'ab' (e.g., '', 'ab', 'abab')",
+        "desc_star_a_star_b": "Any number of 'a's followed by any number of 'b's",
+        "desc_universal_ab": "Matches any string of 'a's and 'b's (universal set over {a,b})",
+        "desc_exact_bab": "Exact match for string 'bab'",
+        "desc_union_a_epsilon": "Matches 'a' or the empty string"
+    }
 }

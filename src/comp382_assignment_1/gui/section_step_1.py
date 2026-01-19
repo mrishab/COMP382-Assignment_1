@@ -1,9 +1,10 @@
+from comp382_assignment_1.gui.regex_sample_dropdown import RegexSampleDropdown
 from comp382_assignment_1.common.symbols import REGEX_SYMBOLS
 from comp382_assignment_1.logic.regex_validator import validate_regex
 from comp382_assignment_1.gui.input_bar import InputBar
 from comp382_assignment_1.gui.text import Text
 from comp382_assignment_1.gui.heading_label import HeadingLabel
-from PySide6.QtWidgets import QWidget, QVBoxLayout
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QComboBox
 from comp382_assignment_1.gui.app_config import AppConfig
 from comp382_assignment_1.gui.virtual_keyboard import VirtualKeyboard
 
@@ -12,7 +13,7 @@ class SectionStep1(QWidget):
         super().__init__(parent)
         self.app_config = app_config
         self.setup_ui()
-    
+
     def setup_ui(self):
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 20, 0, 20)
@@ -20,11 +21,9 @@ class SectionStep1(QWidget):
 
         # 1. Heading
         self.heading = HeadingLabel(self.app_config.section_1_heading)
-        layout.addWidget(self.heading)
 
         # "Enter R:" Label
         self.sub_label = Text(self.app_config.section_1_subheading)
-        layout.addWidget(self.sub_label)
 
         # Regex Input Bar
         self.regex_input_bar = InputBar(
@@ -35,8 +34,14 @@ class SectionStep1(QWidget):
             invalid_text=self.app_config.section_1_status_text_invalid,
             validator_func=lambda input_text: validate_regex(input_text)
         )
-        layout.addWidget(self.regex_input_bar)
+
+        self.regex_sample_dropdown = RegexSampleDropdown(self.app_config, self.regex_input_bar)
 
         # Virtual Keyboard
         self.keyboard = VirtualKeyboard(REGEX_SYMBOLS, self.regex_input_bar.input_field)
+
+        layout.addWidget(self.heading)
+        layout.addWidget(self.sub_label)
+        layout.addWidget(self.regex_sample_dropdown)
+        layout.addWidget(self.regex_input_bar)
         layout.addWidget(self.keyboard)
