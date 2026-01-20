@@ -32,18 +32,25 @@ uv run test
 
 ## Citations & References
 
+- **Course Materials**: Campbell, R. (2024). Week 1: Sec 1.1 Finite Automata Introduction to the Theory of Computation [Lecture slides]. COMP 382: Languages, Computation, and Machines. University of the Fraser Valley.
 - **Linear Algebra & Regex Theory**: Sipser, M. (2013). *Introduction to the Theory of Computation* (3rd ed.). Cengage Learning. (Definition 1.52, pg 64).
 - **GUI Framework**: [Qt for Python (PySide6) Documentation](https://doc.qt.io/qtforpython-6/).
 - **Python Language**: [Python 3.12 Documentation](https://docs.python.org/3/).
 
 ## AI Usage Documentation
 
-This project was developed with the assistance of an AI programming agent (Google DeepMind's Antigravity).
+This project was developed with the assistance of AI programming tools including Google DeepMind's Antigravity and DeepSeek.
 
-- **Role**: The AI agent acted as a "Pair Programmer," assisting with UI design, auto-complete, refactoring, debugging, and brainstorming on edge cases.
+- **Roles**: 
+    - **Pair Programmer (Google DeepMind's Antigravity)**: Assisted with UI design, auto-complete, refactoring, debugging, and brainstorming on edge cases.
+    - **Conceptual Clarification Assistant (DeepSeek):**: Helped understand first week concepts including "Definition 1.52 on pg 64" at a deeper level to improve articulation of ideas and theoretical foundations.
 - **Process**:
     - **Planning**: The agent analyzed the assignment requirements and provided feedback and gaps in the current project implementation, highlighting gaps in the initial implementation.
-    - **Implementation**: It generated the intial code for GUI components.
+    - **Conceptual Understanding**: Used DeepSeek to gain deeper insight into Definition 1.52 (page 64) from the textbook, which enhanced my ability to articulate mathematical concepts and ensure proper implementation of related algorithms.
+    - **Implementation**:
+          - It generated the intial code for GUI components.
+          - Created the comprehensive def run_all_tests() function for test_matcher.py to establish a user-friendly testing interface with clear feedback mechanisms.
+          - Developed the initial main() function (removed now) for matcher.py that provided a command-line interface before transitioning to GUI.
     - **Verification**: It analyzed stack traces and error messages to debug the code.
 
 ## Design Justifications
