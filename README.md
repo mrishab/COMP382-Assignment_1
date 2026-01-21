@@ -59,7 +59,7 @@ This project was developed with the assistance of AI programming tools including
 
 - **Roles**: 
     - **Pair Programmer (Google DeepMind's Antigravity)**: Assisted with UI design, auto-complete, refactoring, debugging, and brainstorming on edge cases.
-    - **Conceptual Clarification Assistant (DeepSeek):**: Helped understand first week concepts including "Definition 1.52 on pg 64" at a deeper level to improve articulation of ideas and theoretical foundations.
+    - **Conceptual Clarification Assistant (DeepSeek):** Helped understand first week concepts including "Definition 1.52 on pg 64" at a deeper level to improve articulation of ideas and theoretical foundations.
 - **Process**:
     - **Planning**: The agent analyzed the assignment requirements and provided feedback and gaps in the current project implementation, highlighting gaps in the initial implementation.
     - **Conceptual Understanding**: Used DeepSeek to gain deeper insight into Definition 1.52 (page 64) from the textbook, which enhanced my ability to articulate mathematical concepts and ensure proper implementation of related algorithms.
